@@ -1,5 +1,7 @@
 package weakestRowInArray;
-
+// TODO: 29.09.2022 Массив в левой части 1, в правой 0. Вывести массив длиной K, который
+//  содержит сведения о минимальных 1 в строке, если кол-во единиц совпадает,
+//  то меньшее там, где номер строки меньше в исходном массиве.
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -37,6 +39,7 @@ public class weakestRowBySoldier {
         for (int key : resultMap.keySet()) {
             if (pos == k) break;
             List<Integer> list = resultMap.get(key);
+            Collections.sort(list);
             for (int value : list) {
                 if (pos == k) break;
                 result[pos] = value;
